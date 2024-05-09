@@ -7,3 +7,13 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.actionButton {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 28px;
+  background-image: url(../images/fileAction.svg);
+  cursor: pointer;
+}
