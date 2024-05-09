@@ -1,16 +1,21 @@
-'use strict';
-
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const autoprefixer = require('autoprefixer');
+const tailwindcss = require('tailwindcss');
 
-module.exports = function(defaults) {
+const isProduction = EmberApp.env() === 'production';
+
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
+        cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\.config\.js$/],
+        map: false,
         plugins: [
-          require('tailwindcss')('./tailwind.config.js'),
-        ]
-      }
-    }
+          tailwindcss('./tailwind.config.js'),
+          autoprefixer,
+        ],
+      },
+    },
   });
 
   return app.toTree();
