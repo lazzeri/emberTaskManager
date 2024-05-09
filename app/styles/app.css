@@ -1,8 +1,9 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
-body {
-  margin: 0;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Set base font-family to Roboto */
+body {
+  font-family: 'Roboto', sans-serif;
+}
