@@ -25,35 +25,14 @@ function routes()
 {
   this.namespace = 'api';
 
-  this.get('/sections', () =>
+  this.get('/sections', (schema, request) =>
   {
-    return [
-      {
-        id: 1,
-        title: 'Test',
-        index: 0,
-        items: [{
-          title: 'Test Title',
-          state: 'inProgress'
-        },{
-          title: 'Test Title2',
-          state: 'completed'
-        }]
-      },
-      {
-        id: 2,
-        title: 'Test2',
-        index: 1,
-        items: {}
-      },
-      {
-        id: 3,
-        title: 'Test3',
-        index: 2,
-        items: {}
-      },
-    ]
-      ;
+    return schema.db.sections;
+  });
+
+  this.patch('/sections', (schema, request) =>
+  {
+    return schema.db.sections;
   });
 
 

@@ -6,15 +6,15 @@
     </div>
   </div>
 
-  {{#each @section.items as |item|}}
+  {{#each this.foundSectionItems as |item|}}
     <MainPage::TaskSmall @item={{item}} />
   {{/each}}
 
   {{#if this.isAdding}}
     <div class="bg-white rounded border-solid mt-2">
-      <textarea class="block w-full rounded border border-gray-300" placeholder="Enter a Description for a new Item"></textarea>
+      <Textarea class="block w-full rounded border border-gray-300" placeholder="Enter a Description for a new Item" @value={{this.inputValue}} />
       <div class="flex justify-end mt-1 pb-2">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2"> Save </button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2" {{on "click" this.addTicket}}> Save </button>
         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold px-4 rounded" {{on "click" (fn this.toggleAddition false)}}>Discard</button>
       </div>
     </div>
