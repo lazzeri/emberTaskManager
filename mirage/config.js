@@ -21,16 +21,16 @@ export default function (config) {
 }
 
 function routes() {
+  this.namespace = 'api';
+
   this.get('/sections', () => {
-    return {
-      data: [
+    return [
         { id: 1, title: 'Test', index: 0, items: {}},
         { id: 2, title: 'Test2', index: 1, items: {}},
         { id: 3, title: 'Test3', index: 2, items: {}},
       ]
-    };
+    ;
   });
-
 
 
 
