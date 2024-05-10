@@ -6,7 +6,7 @@ export default class MainPageTaskProgressComponent extends Component {
   stateText = 'In Progress';
 
   get progressClass() {
-    switch(this.progressState) {
+    switch (this.progressState) {
       case 'inProgress':
         return 'bg-yellow-200';
       case 'completed':

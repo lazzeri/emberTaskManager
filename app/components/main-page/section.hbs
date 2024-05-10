@@ -8,11 +8,23 @@
 
   <MainPage::TaskSmall />
 
-  <div class="addCartButton mt-1">
+  {{#if this.isAdding}}
+    <div class="bg-white rounded border-solid mt-2">
+      <textarea class="block w-full rounded border border-gray-300" placeholder="Enter a Description for a new Item"></textarea>
+      <div class="flex justify-end mt-1 pb-2">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2"> Save </button>
+        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold px-4 rounded" {{on "click" (fn this.toggleAddition false)}}>Discard</button>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#unless this.isAdding}}
+  <div class="addCartButton mt-2" {{on "click" (fn this.toggleAddition true)}}>
     <div class="hover:bg-gray-300 rounded-md">
       <div class="font-semibold">
         + Add a Task
       </div>
     </div>
   </div>
+  {{/unless}}
 </div>
