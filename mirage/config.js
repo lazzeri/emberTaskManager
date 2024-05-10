@@ -2,9 +2,10 @@ import {
   discoverEmberDataModels,
   // applyEmberDataSerializers,
 } from 'ember-cli-mirage';
-import { createServer } from 'miragejs';
+import {createServer} from 'miragejs';
 
-export default function (config) {
+export default function (config)
+{
   let finalConfig = {
     ...config,
     // Remove discoverEmberDataModels if you do not want ember-cli-mirage to auto discover the ember models
@@ -20,19 +21,40 @@ export default function (config) {
   return createServer(finalConfig);
 }
 
-function routes() {
+function routes()
+{
   this.namespace = 'api';
 
-  this.get('/sections', () => {
+  this.get('/sections', () =>
+  {
     return [
-        { id: 1, title: 'Test', index: 0, items: {}},
-        { id: 2, title: 'Test2', index: 1, items: {}},
-        { id: 3, title: 'Test3', index: 2, items: {}},
-      ]
-    ;
+      {
+        id: 1,
+        title: 'Test',
+        index: 0,
+        items: [{
+          title: 'Test Title',
+          state: 'inProgress'
+        },{
+          title: 'Test Title2',
+          state: 'completed'
+        }]
+      },
+      {
+        id: 2,
+        title: 'Test2',
+        index: 1,
+        items: {}
+      },
+      {
+        id: 3,
+        title: 'Test3',
+        index: 2,
+        items: {}
+      },
+    ]
+      ;
   });
-
-
 
 
   // These comments are here to help you get started. Feel free to delete them.

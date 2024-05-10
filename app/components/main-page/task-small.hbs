@@ -1,6 +1,6 @@
-<div class="bg-white rounded hover:border-blue-500 hover:cursor-pointer border-solid hover:border-2">
-    <MainPage::TaskProgress />
+<div class="bg-white rounded hover:border-blue-500 hover:cursor-pointer border-solid hover:border-2 mt-2">
+    <MainPage::TaskProgress @progressState={{@item.state}}/>
     <div>
-      This is the description of the Task
+        {{@item.title}}
     </div>
 </div>

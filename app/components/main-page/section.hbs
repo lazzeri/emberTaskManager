@@ -6,7 +6,9 @@
     </div>
   </div>
 
-  <MainPage::TaskSmall />
+  {{#each @section.items as |item|}}
+    <MainPage::TaskSmall @item={{item}} />
+  {{/each}}
 
   {{#if this.isAdding}}
     <div class="bg-white rounded border-solid mt-2">
