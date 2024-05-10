@@ -10,10 +10,7 @@ module.exports = function (defaults) {
       compile: {
         cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\.config\.js$/],
         map: false,
-        plugins: [
-          tailwindcss('./tailwind.config.js'),
-          autoprefixer,
-        ],
+        plugins: [tailwindcss('./tailwind.config.js'), autoprefixer],
       },
     },
   });
