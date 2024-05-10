@@ -17,3 +17,7 @@ body {
   background-image: url(../images/fileAction.svg);
   cursor: pointer;
 }
+
+.addCartButton{
+  cursor: pointer;
+}
