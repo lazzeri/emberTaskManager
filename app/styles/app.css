@@ -1,8 +1,10 @@
+@import url("ember-modal-dialog/ember-modal-structure.css");
+@import url("ember-modal-dialog/ember-modal-appearance.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 /* Set base font-family to Roboto */
 body {

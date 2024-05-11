@@ -5,7 +5,9 @@ import { service } from '@ember/service';
 
 export default class SectionAdderComponent extends Component {
   @service requests;
-  @tracked foundSections = Array.isArray(this.args.sections) ? this.args?.sections : [];
+  @tracked foundSections = Array.isArray(this.args.sections)
+    ? this.args?.sections
+    : [];
   @tracked inputValue = '';
   @tracked isAdding = false;
 
@@ -15,21 +17,17 @@ export default class SectionAdderComponent extends Component {
 
   @action addSection() {
     //Not added a description so we won't safe
-    if (this.inputValue === '')
-      return;
+    if (this.inputValue === '') return;
 
     const newSectionId = this.foundSections.length + 1;
     const newSection = {
       title: this.inputValue,
       index: newSectionId,
       id: newSectionId,
-      items: []
+      items: [],
     };
 
-    this.foundSections = [
-      ...this.foundSections,
-      newSection,
-    ];
+    this.foundSections = [...this.foundSections, newSection];
 
     //Close the Addition Part
     this.isAdding = false;

@@ -1,14 +1,11 @@
 import Service from '@ember/service';
-import {service} from '@ember/service';
+import { service } from '@ember/service';
 
-export default class RequestsService extends Service
-{
+export default class RequestsService extends Service {
   @service store;
 
-  async updateSection(newData, sectionId)
-  {
-    try
-    {
+  async updateSection(newData, sectionId) {
+    try {
       let sectionToUpdate = await this.store.peekRecord('section', sectionId);
 
       if (!sectionToUpdate)
@@ -16,22 +13,17 @@ export default class RequestsService extends Service
 
       sectionToUpdate.items = newData;
       await sectionToUpdate.save();
-    } catch (error)
-    {
+    } catch (error) {
       console.error('Error updating post:', error);
     }
   }
 
-  async addSection(newData)
-  {
-    try
-    {
+  async addSection(newData) {
+    try {
       console.log(newData);
       this.store.createRecord('section', newData);
-    } catch (error)
-    {
+    } catch (error) {
       console.error('Error adding section:', error);
     }
   }
 }
-

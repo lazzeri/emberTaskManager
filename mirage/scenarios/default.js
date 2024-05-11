@@ -1,5 +1,4 @@
 export default function (server) {
-
   const storedData = loadMirageState();
 
   server.db.loadData({
@@ -7,10 +6,9 @@ export default function (server) {
   });
 }
 
-
 function loadMirageState() {
   let mirageState = localStorage.getItem('schemaDb');
-  if(!mirageState)
+  if (!mirageState)
     return [
       {
         id: 1,
@@ -20,12 +18,12 @@ function loadMirageState() {
           {
             title: 'Test Title',
             state: 'inProgress',
-            id: 0
+            id: 0,
           },
           {
             title: 'Test Title2',
             state: 'completed',
-            id: 1
+            id: 1,
           },
         ],
       },

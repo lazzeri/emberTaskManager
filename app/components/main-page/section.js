@@ -11,6 +11,7 @@ export default class MainPageSectionComponent extends Component {
     : [];
   @tracked inputValue = '';
   sectionId = this.args.section.id;
+  @service modals;
 
   @action toggleAddition(boolean) {
     this.isAdding = boolean;
