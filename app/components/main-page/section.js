@@ -11,6 +11,7 @@ export default class MainPageSectionComponent extends Component
     ? this.args?.section?.items
     : [];
   @tracked inputValue = '';
+  sectionId = this.args.section.id;
 
   @action toggleAddition(boolean)
   {
@@ -26,8 +27,7 @@ export default class MainPageSectionComponent extends Component
       ...this.foundSectionItems,
       {
         title: this.inputValue,
-        state: 'notStarted',
-        id: 2
+        state: 'notStarted'
       },
     ];
 
@@ -35,7 +35,7 @@ export default class MainPageSectionComponent extends Component
     this.isAdding = false;
     //Clear the input text
     this.inputValue = '';
-
-    this.requests.updateSection(this.foundSectionItems, 1);
+    //Update the Database
+    this.requests.updateSection(this.foundSectionItems, this.sectionId);
   }
 }
