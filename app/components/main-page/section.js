@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 
 export default class MainPageSectionComponent extends Component {
   @tracked isAdding = false
-  @tracked foundSectionItems = this.args.section.items;
+  @tracked foundSectionItems = Array.isArray(this.args.section.items) ? this.args?.section?.items : [];
   @tracked inputValue = '';
 
   @action toggleAddition(boolean) {
@@ -16,7 +16,6 @@ export default class MainPageSectionComponent extends Component {
     if(this.inputValue === '')
       return;
 
-    console.log(this.inputValue);
 
     this.foundSectionItems = [...this.foundSectionItems, {
       title: this.inputValue,
@@ -25,6 +24,8 @@ export default class MainPageSectionComponent extends Component {
 
     //Close the Addition Part
     this.isAdding = false;
+    //Clear the input text
+    this.inputValue = '';
   }
 
 }
