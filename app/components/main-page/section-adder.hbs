@@ -1,0 +1,20 @@
+<div class="container sm max-w-[200px] rounded-md bg-gray-100 p-1 cursor-pointer hover:bg-gray-300 bg-opacity-50">
+
+  {{#unless this.isAdding}}
+  <div class="flex justify-between items-center">
+    <div class="font-semibold" {{on "click" (fn this.toggleAddition true)}} >+ Add another section</div>
+  </div>
+  {{/unless}}
+
+  {{#if this.isAdding}}
+    <div class="bg-white rounded border-solid">
+      <Textarea rows=1 cols="1" class="block w-full rounded border border-gray-300" placeholder="Enter section Name" @value={{this.inputValue}}/>
+      <div class="flex justify-end mt-1 pb-2">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2" type="button" {{on "click" this.addSection}}> Save </button>
+        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold px-4 rounded" type="button" {{on "click" (fn this.toggleAddition false)}}>Discard</button>
+      </div>
+    </div>
+  {{/if}}
+
+
+</div>

@@ -2,4 +2,5 @@
   {{#each @sections as |section|}}
     <MainPage::Section @section={{section}} />
   {{/each}}
+  <MainPage::SectionAdder @sections={{@sections}}/>
 </div>

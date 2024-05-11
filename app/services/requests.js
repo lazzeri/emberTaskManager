@@ -1,22 +1,37 @@
 import Service from '@ember/service';
-import { service } from '@ember/service';
+import {service} from '@ember/service';
 
 export default class RequestsService extends Service
 {
   @service store;
 
-  async updateSection(newData,sectionId)
+  async updateSection(newData, sectionId)
   {
-    try {
+    try
+    {
       let sectionToUpdate = await this.store.peekRecord('section', sectionId);
 
-      if(!sectionToUpdate)
+      if (!sectionToUpdate)
         sectionToUpdate = await this.store.findRecord('section', sectionId);
 
       sectionToUpdate.items = newData;
       await sectionToUpdate.save();
-    } catch (error) {
+    } catch (error)
+    {
       console.error('Error updating post:', error);
     }
   }
+
+  async addSection(newData)
+  {
+    try
+    {
+      console.log(newData);
+      this.store.createRecord('section', newData);
+    } catch (error)
+    {
+      console.error('Error adding section:', error);
+    }
+  }
 }
+

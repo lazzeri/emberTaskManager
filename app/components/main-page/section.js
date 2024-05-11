@@ -1,10 +1,9 @@
 import Component from '@glimmer/component';
-import {tracked} from '@glimmer/tracking';
-import {action} from '@ember/object';
-import {service} from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
 
-export default class MainPageSectionComponent extends Component
-{
+export default class MainPageSectionComponent extends Component {
   @service requests;
   @tracked isAdding = false;
   @tracked foundSectionItems = Array.isArray(this.args.section.items)
@@ -13,13 +12,11 @@ export default class MainPageSectionComponent extends Component
   @tracked inputValue = '';
   sectionId = this.args.section.id;
 
-  @action toggleAddition(boolean)
-  {
+  @action toggleAddition(boolean) {
     this.isAdding = boolean;
   }
 
-  @action addTicket()
-  {
+  @action addTicket() {
     //Not added a description so we won't safe
     if (this.inputValue === '') return;
 
@@ -27,7 +24,8 @@ export default class MainPageSectionComponent extends Component
       ...this.foundSectionItems,
       {
         title: this.inputValue,
-        state: 'notStarted'
+        state: 'notStarted',
+        id: this.foundSectionItems.length + 1,
       },
     ];
 
