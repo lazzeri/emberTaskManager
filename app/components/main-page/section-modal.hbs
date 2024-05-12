@@ -1,4 +1,15 @@
-<div>
-  <div> Huh </div>
-  <div> {{@data.title}} </div>
+<div class="container  bg-white rounded p-3 modalContainer">
+  <div class="flex flex-row-reverse">
+    <div class="cursor-pointer" {{on 'click' (fn @close)}}> X </div>
+  </div>
+
+  <div>
+    <div> {{@data.title}} </div>
+  </div>
+  <div>
+    Progress
+  </div>
+  <div>
+    Description Text
+  </div>
 </div>
