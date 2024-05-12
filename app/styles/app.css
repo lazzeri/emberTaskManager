@@ -17,11 +17,12 @@ body {
   cursor: pointer;
 }
 
-.addCartButton {
-  cursor: pointer;
-}
-
 .modalContainer{
   min-width: 300px;
-  min-height: 300px;
 }
+
+.modalContainerDescription{
+  min-height: 150px;
+}
+
+

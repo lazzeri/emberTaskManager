@@ -22,11 +22,11 @@ export default class SectionAdderComponent extends Component {
     const newSectionId = this.foundSections.length + 1;
     const newSection = {
       title: this.inputValue,
-      index: newSectionId,
       id: newSectionId,
       items: [],
     };
 
+    //Update Sections Locally
     this.foundSections = [...this.foundSections, newSection];
 
     //Close the Addition Part

@@ -7,7 +7,7 @@
   </div>
 
   {{#each this.foundSectionItems as |item|}}
-    <MainPage::TaskSmall @item={{item}} />
+    <MainPage::TaskSmall @item={{item}} @sectionId={{this.sectionId}} />
   {{/each}}
 
   {{#if this.isAdding}}
@@ -21,7 +21,7 @@
   {{/if}}
 
   {{#unless this.isAdding}}
-  <div class="addCartButton mt-2" {{on "click" (fn this.toggleAddition true)}}>
+  <div class="cursor-pointer mt-2" {{on "click" (fn this.toggleAddition true)}}>
     <div class="hover:bg-gray-300 rounded-md">
       <div class="font-semibold">
         + Add a Task
