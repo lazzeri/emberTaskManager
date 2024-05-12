@@ -7,7 +7,7 @@
   </div>
 
   {{#each this.foundSectionItems as |item|}}
-    <MainPage::TaskSmall @item={{item}} @sectionId={{this.sectionId}} />
+    <MainPage::TaskSmall @item={{item}} @sectionId={{this.sectionId}} @deleteTask={{this.deleteTask}} />
   {{/each}}
 
   {{#if this.isAdding}}

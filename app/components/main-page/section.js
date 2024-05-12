@@ -38,4 +38,10 @@ export default class MainPageSectionComponent extends Component {
     //Update the Database
     this.requests.updateSection(this.foundSectionItems, this.sectionId);
   }
+
+  @action deleteTask(taskId){
+    this.foundSectionItems = this.foundSectionItems.filter(elem => elem.id !== taskId);
+    this.requests.updateSection(this.foundSectionItems, this.sectionId);
+  }
+
 }
