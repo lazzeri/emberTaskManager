@@ -27,6 +27,7 @@ export default class MainPageSectionComponent extends Component {
         title: this.inputValue,
         state: 'notStarted',
         id: this.foundSectionItems.length + 1,
+        description: '',
       },
     ];
 

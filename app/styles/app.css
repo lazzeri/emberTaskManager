@@ -17,12 +17,10 @@ body {
   cursor: pointer;
 }
 
-.modalContainer{
+.modalContainer {
   min-width: 300px;
 }
 
-.modalContainerDescription{
+.modalContainerDescription {
   min-height: 150px;
 }
-
-

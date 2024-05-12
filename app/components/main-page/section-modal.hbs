@@ -1,18 +1,24 @@
 <div class="container  bg-white rounded p-3 modalContainer">
   <div class="flex flex-row-reverse">
-    <div class="cursor-pointer font-bold" {{on 'click' (fn @close)}}> X</div>
+    <div class="cursor-pointer font-bold" {{on 'click' @close}}> X</div>
   </div>
-<div class="flex flex-col gap-3">
-<div class="cursor-pointer" {{on "click" this.toggleTitleEdit}}>
-  {{#if this.titleEdit}}
-    <input type="text" value="{{this.title}}" {{on "blur" this.updateTitle}}>
-  {{else}}
-    <div class="font-bold">{{this.title}}</div>
-  {{/if}}
-  </div>
-    <div class="">
-      <MainPage::TaskProgress @progressState={{@data.taskItem.state}}/>
+  <div class="flex flex-col gap-3">
+    <div class="cursor-pointer" {{on "click" this.toggleTitleEdit}}>
+      {{#if this.titleEdit}}
+        <input type="text" value="{{this.title}}" {{on "blur" this.updateTitle}}>
+      {{else}}
+        <div class="font-bold">{{this.title}}</div>
+      {{/if}}
     </div>
+    <div class="cursor-pointer" {{on "click" this.toggleProgressEdit}}>
+      {{#if this.progressEdit}}
+        <MainPage::TaskProgressPicker @onChange={{this.handleChoiceChange}} @progressState={{this.progress}}/>
+      {{else}}
+        <MainPage::TaskProgress @progressState={{this.progress}}/>
+      {{/if}}
+    </div>
+
+
     <div class="modalContainerDescription cursor-pointer">
       Description Text
     </div>
@@ -20,4 +26,4 @@
       <button class="bg-red-500 hover:bg-red-800 text-white font-bold px-4 rounded" type="button">Remove Task</button>
     </div>
   </div>
-  </div>
+</div>

@@ -1,10 +1,9 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 
 export default class MainPageTaskProgressComponent extends Component {
-  progressState = this.args.progressState;
-
   get stateText() {
-    switch (this.progressState) {
+    switch (this.args.progressState) {
       case 'inProgress':
         return 'In Progress';
       case 'completed':
@@ -19,7 +18,7 @@ export default class MainPageTaskProgressComponent extends Component {
   }
 
   get progressClass() {
-    switch (this.progressState) {
+    switch (this.args.progressState) {
       case 'inProgress':
         return 'bg-yellow-200';
       case 'completed':

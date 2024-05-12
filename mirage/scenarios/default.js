@@ -18,11 +18,13 @@ function loadMirageState() {
             title: 'Test Title',
             state: 'inProgress',
             id: 1,
+            description: '',
           },
           {
             title: 'Test Title2',
             state: 'completed',
             id: 2,
+            description: '',
           },
         ],
       },

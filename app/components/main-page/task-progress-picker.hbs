@@ -1,0 +1,6 @@
+<select {{on "change" this.selectOption}}>
+  {{#each this.options as |optionItem|}}
+  <option value={{optionItem.value}} selected={{eq this.currProgressState optionItem.value}}>{{optionItem.label}} </option>
+  {{/each}}
+</select>
+
