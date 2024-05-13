@@ -10,7 +10,8 @@ export default class MainPageSectionModalComponent extends Component {
 
   @tracked title = this.args.data.taskItem.title;
   @tracked progress = this.args.data.taskItem.state;
-  @tracked description = this.args.data.taskItem.description || 'Enter description';
+  @tracked description =
+    this.args.data.taskItem.description || 'Enter description';
   @service requests;
 
   @action toggleTitleEdit() {
@@ -61,5 +62,4 @@ export default class MainPageSectionModalComponent extends Component {
     this.args.close();
     this.args.data.deleteTaskCallBack(this.args.data.taskItem.id);
   }
-
 }

@@ -5,6 +5,7 @@ import { service } from '@ember/service';
 
 export default class MainPageSectionComponent extends Component {
   @service requests;
+  @service frontendHelpers;
   @tracked isAdding = false;
   @tracked foundSectionItems = Array.isArray(this.args.section.items)
     ? this.args?.section?.items
@@ -17,7 +18,7 @@ export default class MainPageSectionComponent extends Component {
     this.isAdding = boolean;
   }
 
-  @action addTicket() {
+  @action addTask() {
     //Not added a description so we won't safe
     if (this.inputValue === '') return;
 
@@ -26,7 +27,7 @@ export default class MainPageSectionComponent extends Component {
       {
         title: this.inputValue,
         state: 'notStarted',
-        id: this.foundSectionItems.length + 1,
+        id: this.frontendHelpers.generateUuidv4(),
         description: '',
       },
     ];
@@ -39,13 +40,14 @@ export default class MainPageSectionComponent extends Component {
     this.requests.updateSection(this.foundSectionItems, this.sectionId);
   }
 
-  @action deleteTask(taskId){
-    this.foundSectionItems = this.foundSectionItems.filter(elem => elem.id !== taskId);
+  @action deleteTask(taskId) {
+    this.foundSectionItems = this.foundSectionItems.filter(
+      (elem) => elem.id !== taskId,
+    );
     this.requests.updateSection(this.foundSectionItems, this.sectionId);
   }
 
-  @action deleteSection(){
+  @action deleteSection() {
     this.requests.deleteSection(this.sectionId);
   }
-
 }

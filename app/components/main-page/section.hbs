@@ -14,7 +14,7 @@
     <div class="bg-white rounded border-solid mt-2">
       <Textarea class="block w-full rounded border border-gray-300" placeholder="Enter a Description for a new Item" @value={{this.inputValue}} />
       <div class="flex justify-end mt-1 pb-2">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2" type="button" {{on "click" this.addTicket}}> Save </button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white rounded  px-4 mr-2" type="button" {{on "click" this.addTask}}> Save </button>
         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold px-4 rounded" type="button" {{on "click" (fn this.toggleAddition false)}}>Discard</button>
       </div>
     </div>

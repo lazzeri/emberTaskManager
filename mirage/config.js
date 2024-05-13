@@ -61,7 +61,6 @@ function routes() {
     }
   });
 
-
   this.post('/sections/', (schema, request) => {
     let attrs = JSON.parse(request.requestBody);
     schema.sections.create(attrs);

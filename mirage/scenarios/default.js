@@ -8,14 +8,12 @@ export default function (server) {
 
 function loadMirageState() {
   let mirageState = localStorage.getItem('schemaDb');
-  if (!mirageState)
-    return defaultMirageState;
+  if (!mirageState) return defaultMirageState;
 
   return JSON.parse(mirageState);
 }
 
-
-const defaultMirageState =  [
+const defaultMirageState = [
   {
     id: 1,
     title: 'Test',
@@ -37,8 +35,7 @@ const defaultMirageState =  [
   {
     id: 2,
     title: 'Test2',
-    items: []
-,
+    items: [],
   },
   {
     id: 3,
