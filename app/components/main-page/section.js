@@ -44,4 +44,8 @@ export default class MainPageSectionComponent extends Component {
     this.requests.updateSection(this.foundSectionItems, this.sectionId);
   }
 
+  @action deleteSection(){
+    this.requests.deleteSection(this.sectionId);
+  }
+
 }

@@ -2,7 +2,7 @@
   <div class="flex justify-between items-center">
     <div class="font-semibold">{{@section.title}}</div>
     <div class="flex m-1">
-      <div class="font-bold actionButton"></div>
+      <div class="font-bold actionButton" {{on "click" this.deleteSection}}></div>
     </div>
   </div>
 

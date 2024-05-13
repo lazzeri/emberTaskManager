@@ -49,6 +49,19 @@ function routes() {
     return section.attrs;
   });
 
+  this.del('/sections/:id', (schema, request) => {
+    let sectionId = request.params.id;
+    let section = schema.sections.find(sectionId);
+    if (section) {
+      section.destroy();
+      saveMirageState(schema.db.sections);
+      return { message: 'Section deleted successfully.' };
+    } else {
+      return new Response(404, {}, { error: 'Section not found.' });
+    }
+  });
+
+
   this.post('/sections/', (schema, request) => {
     let attrs = JSON.parse(request.requestBody);
     schema.sections.create(attrs);

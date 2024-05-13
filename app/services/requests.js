@@ -57,4 +57,14 @@ export default class RequestsService extends Service
       console.error('Error creating new section:', error);
     }
   }
+
+  async deleteSection(sectionId) {
+    try {
+      let sectionToDelete = await this.store.peekRecord('section', sectionId);
+      sectionToDelete.destroyRecord();
+    } catch (error) {
+      console.error('Error deleting section:', error);
+    }
+  }
+
 }
