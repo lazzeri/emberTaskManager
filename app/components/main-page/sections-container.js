@@ -37,7 +37,7 @@ export default class MainPageSectionsContainerComponent extends Component
       {
         const filteredItems = section.items.filter(item =>
         {
-          return item.state === progressFilter;
+          return item.progress === progressFilter;
         });
 
         return {

@@ -9,7 +9,7 @@ export default class MainPageSectionModalComponent extends Component {
   @tracked descriptionEdit = false;
 
   @tracked title = this.args.data.taskItem.title;
-  @tracked progress = this.args.data.taskItem.state;
+  @tracked progress = this.args.data.taskItem.progress;
   @tracked description =
     this.args.data.taskItem.description || 'Enter description';
   @service requests;
@@ -43,7 +43,7 @@ export default class MainPageSectionModalComponent extends Component {
     if (this.progress === newProgressValue) return;
 
     this.progress = newProgressValue;
-    this.args.data.taskItem.state = this.progress;
+    this.args.data.taskItem.progress = this.progress;
     this.args.data.updateCallBack();
     this.requests.updateTask(this.args.data.taskItem, this.args.data.sectionId);
   }

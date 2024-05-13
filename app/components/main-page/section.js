@@ -26,7 +26,7 @@ export default class MainPageSectionComponent extends Component {
       ...this.foundSectionItems,
       {
         title: this.inputValue,
-        state: 'notStarted',
+        progress: 'notStarted',
         id: this.frontendHelpers.generateUuidv4(),
         description: '',
       },

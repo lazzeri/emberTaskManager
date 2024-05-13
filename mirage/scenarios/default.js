@@ -20,13 +20,13 @@ const defaultMirageState = [
     items: [
       {
         title: 'Test Title',
-        state: 'inProgress',
+        progress: 'inProgress',
         id: 1,
         description: '',
       },
       {
         title: 'Test Title2',
-        state: 'completed',
+        progress: 'completed',
         id: 2,
         description: '',
       },

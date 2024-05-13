@@ -8,14 +8,14 @@ import MainPageSectionModalComponent from './section-modal';
 export default class MainPageTaskSmallComponent extends Component {
   @service modals;
   @tracked title = this.args.item.title;
-  @tracked state = this.args.item.state;
+  @tracked progress = this.args.item.progress;
 
   @action
   handleOpenModal() {
     //We use a callback to update the small task, because @tracked won't trigger
     const updateCallBack = () => {
       this.title = this.args.item.title;
-      this.state = this.args.item.state;
+      this.progress = this.args.item.progress;
     };
 
     const deleteTaskCallBack = (taskId) => {
