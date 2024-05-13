@@ -1,4 +1,18 @@
 <div class="container mx-auto mt-1">
-  <MainPage::SectionsContainer @sections={{@model}} />
+  <div class="mb-2 flex space-x-2">
+    <div>
+      <div class="text-lg font-bold">Search for Tasks:</div>
+      <Input @value={{this.query}} class="light border rounded-md px-4 pt-2 pb-1 focus:outline-none focus:ring focus:border-blue-300" />
+    </div>
+
+    <div>
+      <div class="text-lg font-bold">Filter for Progress:</div>
+      <MainPage::TaskProgressPicker @onChange={{this.handleProgressFilterChange}}
+                                    class="light border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-300"/>
+    </div>
+
+  </div>
+
+  <MainPage::SectionsContainer @sections={{@model}} @query={{this.query}} @progressFilter={{this.progressFilter}} />
 </div>
 

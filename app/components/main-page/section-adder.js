@@ -1,10 +1,9 @@
 import Component from '@glimmer/component';
-import {tracked} from '@glimmer/tracking';
-import {action} from '@ember/object';
-import {service} from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
 
-export default class SectionAdderComponent extends Component
-{
+export default class SectionAdderComponent extends Component {
   @service requests;
   @tracked foundSections = Array.isArray(this.args.sections)
     ? this.args?.sections
@@ -13,13 +12,11 @@ export default class SectionAdderComponent extends Component
   @tracked isAdding = false;
   @service frontendHelpers;
 
-  @action toggleAddition(boolean)
-  {
+  @action toggleAddition(boolean) {
     this.isAdding = boolean;
   }
 
-  @action addSection()
-  {
+  @action addSection() {
     //Not added a description so we won't safe
     if (this.inputValue === '') return;
 
