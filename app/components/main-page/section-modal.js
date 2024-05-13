@@ -27,7 +27,7 @@ export default class MainPageSectionModalComponent extends Component {
 
   @action updateTitle(event) {
     this.titleEdit = false;
-    console.log(this.title,this.args.data.taskItem.title)
+
     if (event.target.value === this.args.data.taskItem.title) return;
 
     this.title = event.target.value;
@@ -51,7 +51,6 @@ export default class MainPageSectionModalComponent extends Component {
     this.descriptionEdit = false;
     if (event.target.value === this.args.data.taskItem.description) return;
 
-    console.log('Updating description');
     this.description = event.target.value || 'Enter Description';
     this.args.data.taskItem.description = event.target.value;
     this.requests.updateTask(this.args.data.taskItem, this.args.data.sectionId);

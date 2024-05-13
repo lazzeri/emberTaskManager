@@ -18,7 +18,6 @@ export default class MainPageTaskSmallComponent extends Component
     const updateCallBack = () =>
     {
       this.title = this.args.item.title;
-      console.log(this.args.item);
       this.state = this.args.item.state;
     };
 

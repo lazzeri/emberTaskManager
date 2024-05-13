@@ -53,7 +53,7 @@ function routes() {
     let attrs = JSON.parse(request.requestBody);
     schema.sections.create(attrs);
     saveMirageState(schema.db.sections);
-    return schema.db.sections;
+    return attrs;
   });
 
   // Function to save Mirage database state to local storage to make it persistent
