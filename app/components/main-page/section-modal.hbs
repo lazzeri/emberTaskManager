@@ -7,7 +7,7 @@
       {{#if this.titleEdit}}
         <input type="text" value="{{this.title}}" {{on "blur" this.updateTitle}}>
       {{else}}
-        <div class="font-bold">{{this.title}}</div>
+        <div class="font-bold text-2xl">{{this.title}}</div>
       {{/if}}
     </div>
     <div class="cursor-pointer" {{on "click" this.toggleProgressEdit}}>
@@ -20,15 +20,21 @@
 
     <div class="cursor-pointer" {{on "click" this.toggleDescriptionEdit}}>
       {{#if this.descriptionEdit}}
-        <Textarea minRows="3" class="w-full" placeholder="Enter description" type="text"
-                  @value="{{this.description}}" {{on "blur" this.updateDescription}} />
+        <Textarea
+                rows="3"
+                class="w-full"
+                placeholder="Enter description"
+                type="text"
+                @value="{{this.description}}"
+          {{on "blur" this.updateDescription}} />
       {{else}}
-        {{this.description}}
+        <div class="whitespace-pre-line">{{this.description}} <br> <br></div>
       {{/if}}
     </div>
 
     <div>
-      <button class="bg-red-500 hover:bg-red-800 text-white font-bold px-4 rounded" type="button" {{on "click" this.removeItem}}>
+      <button class="bg-red-500 hover:bg-red-800 text-white font-bold px-4 rounded" type="button" {{on "click"
+                                                                                                       this.removeItem}}>
         Remove Task
       </button>
     </div>
